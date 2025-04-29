@@ -1,0 +1,74 @@
+Edge_Router>en
+Edge_Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Edge_Router(config)#ip route 0.0.0.0 0.0.0.0 10.10.10.1
+Edge_Router(config)#end
+Edge_Router#
+%SYS-5-CONFIG_I: Configured from console by console
+Edge_Router#show ip  route
+
+Edge_Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Edge_Router(config)#ip route 0.0.0.0 0.0.0.0 10.10.20.1 5
+Edge_Router(config)#end
+Edge_Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Edge_Router#show running-config
+Edge_Router#show ip route
+Edge_Router#conf  t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Edge_Router(config)#int g0/0
+Edge_Router(config-if)#shutdown
+
+Edge_Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to down
+
+Edge_Router(config-if)#end
+
+Edge_Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Edge_Router(config)#int g0/0
+Edge_Router(config-if)#no shutdown
+
+Edge_Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Edge_Router(config-if)#end
+
+Edge_Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Edge_Router(config)#ipv6 route ::/0 2001:DB8:A:2::1 5
+Edge_Router(config)#end
+Edge_Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Edge_Router#show running-config
+Edge_Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Edge_Router(config)#int g0/0
+Edge_Router(config-if)#shutdown
+
+Edge_Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to administratively down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to down
+
+Edge_Router(config-if)#end
+Edge_Router#show ipv6 route
+
+Edge_Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Edge_Router(config)#int g0/0
+Edge_Router(config-if)#no shutdown
+
+Edge_Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Edge_Router(config-if)#end
